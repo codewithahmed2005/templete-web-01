@@ -10,12 +10,14 @@ body {
     color: #222;
 }
 
+/* HEADER */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 60px;
     background: #fff;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -24,12 +26,17 @@ body {
 }
 
 .logo span {
+    display: block;
+    font-size: 13px;
     color: #007bff;
-    font-size: 14px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
 }
 
 nav a {
-    margin: 0 15px;
     text-decoration: none;
     color: #333;
 }
@@ -42,6 +49,7 @@ nav a {
     cursor: pointer;
 }
 
+/* HERO */
 .hero {
     padding: 100px 60px;
     background: #eef4ff;
@@ -52,32 +60,114 @@ nav a {
     margin-bottom: 15px;
 }
 
-.services, .about, .contact {
+.hero p {
+    max-width: 500px;
+}
+
+/* SECTIONS */
+.services,
+.about,
+.contact {
     padding: 60px;
 }
 
+.services h2,
+.about h2,
+.contact h2 {
+    margin-bottom: 20px;
+}
+
+/* SERVICES GRID */
 .service-box {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    margin-top: 30px;
 }
 
 .card {
     background: #fff;
     padding: 30px;
-    flex: 1;
     text-align: center;
 }
 
-.contact input, .contact textarea {
+/* CONTACT */
+.contact form {
+    max-width: 500px;
+}
+
+.contact input,
+.contact textarea {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
 }
 
+/* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
     background: #222;
     color: #fff;
+}
+
+/* ===================== */
+/* RESPONSIVE BREAKPOINTS */
+/* ===================== */
+
+@media (max-width: 1024px) {
+    .header {
+        padding: 20px 30px;
+    }
+
+    .hero {
+        padding: 80px 30px;
+    }
+
+    .services,
+    .about,
+    .contact {
+        padding: 50px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .service-box {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .services,
+    .about,
+    .contact {
+        padding: 40px 20px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
 }
